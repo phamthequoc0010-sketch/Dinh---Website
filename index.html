@@ -9,129 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --cream:#f6f0e4; --cream-2:#efe6d3; --brown:#3d2413; --brown-2:#5c3a1c;
-    --gold:#b98a44; --gold-2:#d9b878; --white:#fffdf8; --muted:#7a6a56;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:'Be Vietnam Pro',sans-serif;background:var(--cream);color:var(--brown);line-height:1.7}
-  h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.3}
-  img{max-width:100%;display:block}
-  a{color:inherit}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
-
-  /* Header */
-  header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(246,240,228,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(61,36,19,.12);transition:box-shadow .3s}
-  header.scrolled{box-shadow:0 4px 24px rgba(61,36,19,.12)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-  .brand img{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
-  .brand b{font-family:'Playfair Display',serif;font-size:1.35rem;letter-spacing:.14em}
-  .brand small{display:block;font-family:'Be Vietnam Pro',sans-serif;font-size:.62rem;letter-spacing:.22em;color:var(--muted);font-weight:500}
-  .links{display:flex;gap:30px;align-items:center}
-  .links a{text-decoration:none;font-weight:500;font-size:.95rem;position:relative}
-  .links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--gold);transition:width .25s}
-  .links a:not(.btn):hover::after{width:100%}
-  .btn{display:inline-block;background:var(--brown);color:var(--cream);padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;transition:transform .2s,background .2s;border:none;cursor:pointer}
-  .btn:hover{background:var(--brown-2);transform:translateY(-2px)}
-  .btn.gold{background:var(--gold);color:#fff}
-  .btn.gold:hover{background:#a5763a}
-  .btn.zalo{background:#0068ff;color:#fff}
-  .btn.zalo:hover{background:#0052cc}
-  .burger{display:none;background:none;border:none;cursor:pointer;padding:8px}
-  .burger span{display:block;width:26px;height:3px;background:var(--brown);margin:5px 0;border-radius:2px;transition:.3s}
-
-  /* Hero */
-  .hero{min-height:100svh;display:flex;align-items:center;position:relative;color:#fff;padding:120px 0 80px;overflow:hidden}
-  .hero-bg{position:absolute;inset:0;background:url('images/hero-roastery.jpg') center/cover no-repeat;filter:brightness(.62) saturate(1.05)}
-  .hero-inner{position:relative;z-index:2;max-width:1120px;margin:0 auto;padding:0 22px;width:100%}
-  .kicker{display:inline-block;font-size:.78rem;letter-spacing:.32em;font-weight:600;color:var(--gold-2);text-transform:uppercase;margin-bottom:18px;border:1px solid rgba(217,184,120,.5);padding:8px 18px;border-radius:999px;background:rgba(0,0,0,.25)}
-  .hero h1{font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:20px;text-shadow:0 2px 30px rgba(0,0,0,.4)}
-  .hero p.lead{font-size:clamp(1.05rem,2vw,1.3rem);max-width:620px;margin-bottom:34px;color:#f3ead9;font-weight:300}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-
-  /* Sections */
-  section{padding:96px 0}
-  .sec-head{text-align:center;max-width:680px;margin:0 auto 54px}
-  .sec-head .eyebrow{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px}
-  .sec-head h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:16px}
-  .sec-head p{color:var(--muted)}
-
-  /* About */
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-  .about-img{border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(61,36,19,.22)}
-  .about-img img{aspect-ratio:4/3.4;object-fit:cover;width:100%}
-  .about-txt h2{font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:20px}
-  .about-txt p{margin-bottom:16px;color:#54432e}
-  .about-txt strong{color:var(--brown)}
-  .stats{display:flex;gap:36px;margin-top:28px}
-  .stats div b{display:block;font-family:'Playfair Display',serif;font-size:2rem;color:var(--brown-2)}
-  .stats div span{font-size:.85rem;color:var(--muted)}
-
-  /* Products */
-  #san-pham{background:var(--cream-2)}
-  .products{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-  .card{background:var(--white);border-radius:20px;overflow:hidden;box-shadow:0 14px 40px rgba(61,36,19,.1);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
-  .card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(61,36,19,.18)}
-  .card img{aspect-ratio:1/1;object-fit:cover;width:100%}
-  .card-body{padding:26px;display:flex;flex-direction:column;flex:1}
-  .card-body .tag{align-self:flex-start;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
-  .card-body h3{font-size:1.4rem;margin-bottom:8px}
-  .card-body p{font-size:.92rem;color:var(--muted);margin-bottom:18px;flex:1}
-  .price-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
-  .price{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--brown-2)}
-  .price small{font-family:'Be Vietnam Pro',sans-serif;font-size:.8rem;color:var(--muted);font-weight:400}
-  .card .btn{text-align:center;width:100%}
-
-  /* Values */
-  .values{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-  .value{background:var(--white);border-radius:18px;padding:34px 24px;text-align:center;box-shadow:0 10px 30px rgba(61,36,19,.07)}
-  .value .icon{font-size:2.2rem;margin-bottom:14px}
-  .value h3{font-size:1.1rem;margin-bottom:10px;font-family:'Be Vietnam Pro',sans-serif;font-weight:600}
-  .value p{font-size:.88rem;color:var(--muted)}
-
-  /* Order */
-  #dat-hang{background:linear-gradient(135deg,var(--brown) 0%,#241305 100%);color:var(--cream);text-align:center;border-radius:32px;margin:0 22px;max-width:1076px;margin-left:auto;margin-right:auto}
-  #dat-hang .sec-head h2{color:#fff}
-  #dat-hang .sec-head p{color:#d8c9ae}
-  .zalo-num{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:.06em;margin:10px 0 30px;color:var(--gold-2)}
-  .order-steps{display:flex;justify-content:center;gap:44px;flex-wrap:wrap;margin:44px 0 10px}
-  .step{max-width:220px}
-  .step b{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:rgba(217,184,120,.16);border:1px solid var(--gold-2);color:var(--gold-2);font-size:1.3rem;margin:0 auto 14px;font-family:'Playfair Display',serif}
-  .step p{font-size:.92rem;color:#d8c9ae}
-
-  /* Footer */
-  footer{background:#1c0f05;color:#cdbb9c;padding:64px 0 30px}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;margin-bottom:44px}
-  .foot-grid h4{font-family:'Be Vietnam Pro',sans-serif;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-2);margin-bottom:18px}
-  .foot-grid p,.foot-grid a{font-size:.92rem;color:#cdbb9c;text-decoration:none}
-  .foot-grid a:hover{color:#fff}
-  .foot-brand{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-  .foot-brand img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
-  .foot-brand b{font-family:'Playfair Display',serif;font-size:1.5rem;letter-spacing:.14em;color:#fff}
-  .copy{border-top:1px solid rgba(205,187,156,.18);padding-top:26px;text-align:center;font-size:.82rem;color:#8f7a5e}
-
-  /* Reveal */
-  .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-  .rv.in{opacity:1;transform:none}
-
-  /* Floating Zalo */
-  .float-zalo{position:fixed;right:22px;bottom:22px;z-index:60;background:#0068ff;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;text-decoration:none;box-shadow:0 10px 30px rgba(0,104,255,.45);transition:transform .2s}
-  .float-zalo:hover{transform:scale(1.1)}
-
-  @media(max-width:900px){
-    .links{position:fixed;top:72px;right:0;left:0;background:var(--cream);flex-direction:column;padding:26px;gap:20px;border-bottom:1px solid rgba(61,36,19,.12);transform:translateY(-130%);transition:transform .35s;box-shadow:0 20px 40px rgba(61,36,19,.12)}
-    .links.open{transform:none}
-    .burger{display:block}
-    .about-grid{grid-template-columns:1fr;gap:36px}
-    .products{grid-template-columns:1fr;max-width:440px;margin:0 auto}
-    .values{grid-template-columns:repeat(2,1fr)}
-    .foot-grid{grid-template-columns:1fr;gap:30px}
-    section{padding:72px 0}
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -145,6 +23,7 @@
       <a href="#gioi-thieu">Giới thiệu</a>
       <a href="#san-pham">Sản phẩm</a>
       <a href="#cam-ket">Cam kết</a>
+      <a href="blog.html">Blog</a>
       <a class="btn zalo" href="https://zalo.me/0786567611" target="_blank" rel="noopener">Đặt hàng qua Zalo</a>
     </nav>
     <button class="burger" id="burger" aria-label="Mở menu"><span></span><span></span><span></span></button>
@@ -180,13 +59,51 @@
   </div>
 </section>
 
+<section id="nguon-goc">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Nguồn gốc</div>
+      <h2>Từ nông trại đến tách cà phê</h2>
+      <p>Những hình ảnh thật từ vùng nguyên liệu của Đình.</p>
+    </div>
+    <div class="slider rv" id="originSlider">
+      <div class="slides">
+        <div class="slide">
+          <img src="images/farm/farm-01.jpg" alt="Chùm cherry chín đỏ">
+          <div class="slide-cap"><h3>Chùm cherry chín đỏ</h3><p>Chỉ những trái chín mọng nhất mới được hái.</p></div>
+        </div>
+        <div class="slide">
+          <img src="images/farm/farm-02.jpg" alt="Hái chọn bằng tay">
+          <div class="slide-cap"><h3>Hái chọn bằng tay</h3><p>Từng trái được lựa kỹ lưỡng, không hái ồ ạt.</p></div>
+        </div>
+        <div class="slide">
+          <img src="images/farm/farm-03.jpg" alt="Lớn lên dưới bóng mát">
+          <div class="slide-cap"><h3>Lớn lên dưới bóng mát</h3><p>Cà phê trồng xen cùng chuối và cây che bóng.</p></div>
+        </div>
+        <div class="slide">
+          <img src="images/farm/farm-04.jpg" alt="Tuyển chọn khắt khe">
+          <div class="slide-cap"><h3>Tuyển chọn khắt khe</h3><p>Trái sâu, trái lép bị loại bỏ trước khi sơ chế.</p></div>
+        </div>
+        <div class="slide">
+          <img src="images/farm/farm-05.jpg" alt="Vườn sinh thái tự nhiên">
+          <div class="slide-cap"><h3>Vườn sinh thái tự nhiên</h3><p>Không thuốc trừ sâu — đến bọ ngựa cũng chọn vườn này làm nhà.</p></div>
+        </div>
+      </div>
+      <button class="sbtn prev" aria-label="Ảnh trước">‹</button>
+      <button class="sbtn next" aria-label="Ảnh sau">›</button>
+      <div class="dots"></div>
+    </div>
+  </div>
+</section>
+
 <section id="san-pham">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">Sản phẩm</div>
       <h2>Cà phê của Đình</h2>
-      <!-- GHI CHÚ: tên, giá, ảnh dưới đây là dữ liệu MẪU — thay bằng sản phẩm thực tế khi có -->
+      <!-- GHI CHÚ: tên, giá, ảnh dưới đây là dữ liệu MẪU — thay bằng sản phẩm thực tế khi có (bao gồm 2 sản phẩm mới Arabica và Liberica bên dưới) -->
       <p>Rang mới theo từng đơn. Nhắn Zalo để được tư vấn loại hợp gu của bạn.</p>
+      <p>Fine Robusta là dòng chủ lực của Đình — bên cạnh đó còn có Arabica và Liberica cho những gu khác nhau.</p>
     </div>
     <div class="products">
       <article class="card rv">
@@ -216,6 +133,26 @@
           <h3>Espresso Blend</h3>
           <p>Phối trộn theo công thức riêng của Đình: ngọt, thơm, ít đắng gắt — dễ uống mỗi ngày.</p>
           <div class="price-row"><span class="price">220.000đ <small>/ 500g</small></span></div>
+          <a class="btn zalo" href="https://zalo.me/0786567611" target="_blank" rel="noopener">Đặt qua Zalo</a>
+        </div>
+      </article>
+      <article class="card rv">
+        <img src="images/product-arabica.jpg" alt="Fine Arabica Cầu Đất 500g">
+        <div class="card-body">
+          <span class="tag">Mới</span>
+          <h3>Fine Arabica Cầu Đất</h3>
+          <p>Chua thanh tao nhã, hương hoa quả và mật ong. Rang nhẹ — hợp pour over và phin.</p>
+          <div class="price-row"><span class="price">320.000đ <small>/ 500g</small></span></div>
+          <a class="btn zalo" href="https://zalo.me/0786567611" target="_blank" rel="noopener">Đặt qua Zalo</a>
+        </div>
+      </article>
+      <article class="card rv">
+        <img src="images/product-liberica.jpg" alt="Liberica Cà phê Mít 500g">
+        <div class="card-body">
+          <span class="tag">Đặc sản</span>
+          <h3>Liberica (Cà phê Mít)</h3>
+          <p>Hương mít chín đặc trưng khó lẫn, body nhẹ, hậu ngọt. Dòng cà phê bản địa hiếm của Việt Nam.</p>
+          <div class="price-row"><span class="price">200.000đ <small>/ 500g</small></span></div>
           <a class="btn zalo" href="https://zalo.me/0786567611" target="_blank" rel="noopener">Đặt qua Zalo</a>
         </div>
       </article>
@@ -285,6 +222,34 @@
   navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  /* Origin slider */
+  (function(){
+    const slider=document.getElementById('originSlider');
+    if(!slider) return;
+    const track=slider.querySelector('.slides');
+    const n=track.children.length;
+    const dotsBox=slider.querySelector('.dots');
+    let cur=0, timer=null;
+    for(let i=0;i<n;i++){
+      const b=document.createElement('button');
+      b.setAttribute('aria-label','Ảnh '+(i+1));
+      b.addEventListener('click',()=>go(i));
+      dotsBox.appendChild(b);
+    }
+    const dots=dotsBox.children;
+    function go(i){
+      cur=(i+n)%n;
+      track.style.transform='translateX(-'+(cur*100)+'%)';
+      for(let j=0;j<n;j++) dots[j].classList.toggle('on',j===cur);
+      restart();
+    }
+    function restart(){ clearInterval(timer); timer=setInterval(()=>go(cur+1),5000); }
+    slider.querySelector('.prev').addEventListener('click',()=>go(cur-1));
+    slider.querySelector('.next').addEventListener('click',()=>go(cur+1));
+    slider.addEventListener('mouseenter',()=>clearInterval(timer));
+    slider.addEventListener('mouseleave',restart);
+    go(0);
+  })();
 </script>
 </body>
 </html>
