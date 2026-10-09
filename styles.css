@@ -1,6 +1,6 @@
   :root{
     --cream:#f6f0e4; --cream-2:#efe6d3; --brown:#3d2413; --brown-2:#5c3a1c;
-    --gold:#b98a44; --gold-2:#d9b878; --white:#fffdf8; --muted:#7a6a56;
+    --gold:#b7410e; --gold-2:#e0955a; --white:#fffdf8; --muted:#7a6a56;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -35,7 +35,7 @@
   .hero{min-height:100svh;display:flex;align-items:center;position:relative;color:#fff;padding:120px 0 80px;overflow:hidden}
   .hero-bg{position:absolute;inset:0;background:url('images/hero-roastery.jpg') center/cover no-repeat;filter:brightness(.62) saturate(1.05)}
   .hero-inner{position:relative;z-index:2;max-width:1120px;margin:0 auto;padding:0 22px;width:100%}
-  .kicker{display:inline-block;font-size:.78rem;letter-spacing:.32em;font-weight:600;color:var(--gold-2);text-transform:uppercase;margin-bottom:18px;border:1px solid rgba(217,184,120,.5);padding:8px 18px;border-radius:999px;background:rgba(0,0,0,.25)}
+  .kicker{display:inline-block;font-size:.78rem;letter-spacing:.32em;font-weight:600;color:var(--gold-2);text-transform:uppercase;margin-bottom:18px;border:1px solid rgba(224,149,90,.55);padding:8px 18px;border-radius:999px;background:rgba(0,0,0,.25)}
   .hero h1{font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:20px;text-shadow:0 2px 30px rgba(0,0,0,.4)}
   .hero p.lead{font-size:clamp(1.05rem,2vw,1.3rem);max-width:620px;margin-bottom:34px;color:#f3ead9;font-weight:300}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
