@@ -348,8 +348,16 @@
 
 <a class="float-zalo" href="https://zalo.me/0786567611" target="_blank" rel="noopener" aria-label="Nhắn Zalo">Zalo</a>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="journey-3d.js"></script>
+<script type="importmap">
+{"imports":{
+  "three":"https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script type="module" src="journey-3d.js"></script>
+<script>
+setTimeout(function(){ if(!window.__j3d_ready){ var s=document.getElementById('hanh-trinh-3d'); if(s) s.style.display='none'; } }, 9000);
+</script>
 <script>
   const hdr=document.getElementById('hdr');
   addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10),{passive:true});
