@@ -71,6 +71,7 @@
   .price-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
   .price{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--brown-2)}
   .price small{font-family:'Be Vietnam Pro',sans-serif;font-size:.8rem;color:var(--muted);font-weight:400}
+  .price.coming-soon{color:var(--gold);font-size:1.18rem;letter-spacing:.02em}
   .card .btn{text-align:center;width:100%}
 
   /* Values */
