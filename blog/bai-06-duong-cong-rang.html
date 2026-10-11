@@ -57,6 +57,24 @@
 
       <blockquote>Rang cà phê là nghề của sự kiên nhẫn: mười phút trong máy, nhưng là cả năm trời của người nông dân và cả đời học nghề của người thợ.</blockquote>
 
+            <div class="share-row">
+        <span>Chia sẻ bài viết:</span>
+        <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.dinhroastery.com/blog/bai-06-duong-cong-rang.html" target="_blank" rel="noopener">Facebook</a>
+        <button class="share-btn" id="copyLink">Sao chép link</button>
+      </div>
+      <script>
+      (function(){var b=document.getElementById('copyLink');if(b)b.addEventListener('click',function(){
+        navigator.clipboard.writeText('https://www.dinhroastery.com/blog/bai-06-duong-cong-rang.html').then(function(){b.textContent='Đã sao chép!';setTimeout(function(){b.textContent='Sao chép link'},2000);});
+      });})();
+      </script>
+      <div class="related">
+        <h3>Bài viết liên quan</h3>
+        <ul>
+        <li><a href="bai-05-cap-do-rang.html">Các cấp độ rang và ảnh hưởng đến hương vị</a></li>
+        <li><a href="bai-10-degassing.html">Degassing: vì sao cà phê mới rang cần "nghỉ ngơi"</a></li>
+        <li><a href="bai-13-espresso-chiet-xuat.html">Espresso: chiết xuất, crema và những lỗi thường gặp</a></li>
+        </ul>
+      </div>
       <div class="post-nav">
         <a class="btn" href="bai-05-cap-do-rang.html">← Bài trước</a>
         <a class="btn" href="../blog.html">Về trang Blog</a>
@@ -88,6 +106,7 @@
   </div>
 </footer>
 
+<button class="to-top" id="toTop" aria-label="Về đầu trang">↑</button>
 <a class="float-zalo" href="https://zalo.me/0786567611" target="_blank" rel="noopener" aria-label="Nhắn Zalo">Zalo</a>
 
 <script>
@@ -96,6 +115,11 @@
   const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
   burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+</script>
+<script>
+(function(){var b=document.getElementById('toTop');if(!b)return;
+addEventListener('scroll',function(){b.classList.toggle('show',scrollY>600)},{passive:true});
+b.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});})();
 </script>
 </body>
 </html>

@@ -57,6 +57,24 @@
 
       <blockquote>Mua một cái cân bếp nhỏ là khoản đầu tư rẻ nhất mà hiệu quả nhất cho góc cà phê của bạn — rẻ hơn mọi loại máy móc, mà tác dụng thì thấy ngay sáng hôm sau.</blockquote>
 
+            <div class="share-row">
+        <span>Chia sẻ bài viết:</span>
+        <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.dinhroastery.com/blog/bai-08-ty-le-pha-che.html" target="_blank" rel="noopener">Facebook</a>
+        <button class="share-btn" id="copyLink">Sao chép link</button>
+      </div>
+      <script>
+      (function(){var b=document.getElementById('copyLink');if(b)b.addEventListener('click',function(){
+        navigator.clipboard.writeText('https://www.dinhroastery.com/blog/bai-08-ty-le-pha-che.html').then(function(){b.textContent='Đã sao chép!';setTimeout(function(){b.textContent='Sao chép link'},2000);});
+      });})();
+      </script>
+      <div class="related">
+        <h3>Bài viết liên quan</h3>
+        <ul>
+        <li><a href="bai-07-may-xay-ca-phe.html">Vì sao máy xay quan trọng hơn máy pha?</a></li>
+        <li><a href="bai-09-nuoc-pha-ca-phe.html">Nước pha cà phê: 98% tách cà phê là nước</a></li>
+        <li><a href="bai-16-nuoc-soi-100-do.html">Vì sao không nên pha cà phê bằng nước sôi 100 độ</a></li>
+        </ul>
+      </div>
       <div class="post-nav">
         <a class="btn" href="bai-07-may-xay-ca-phe.html">← Bài trước</a>
         <a class="btn" href="../blog.html">Về trang Blog</a>
@@ -88,6 +106,7 @@
   </div>
 </footer>
 
+<button class="to-top" id="toTop" aria-label="Về đầu trang">↑</button>
 <a class="float-zalo" href="https://zalo.me/0786567611" target="_blank" rel="noopener" aria-label="Nhắn Zalo">Zalo</a>
 
 <script>
@@ -96,6 +115,11 @@
   const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
   burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+</script>
+<script>
+(function(){var b=document.getElementById('toTop');if(!b)return;
+addEventListener('scroll',function(){b.classList.toggle('show',scrollY>600)},{passive:true});
+b.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});})();
 </script>
 </body>
 </html>

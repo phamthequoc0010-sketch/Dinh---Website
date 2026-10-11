@@ -56,6 +56,24 @@
 
       <blockquote>Lần tới cầm gói cà phê, hãy nhìn dòng chữ "natural", "washed" hay "honey" — bạn đang đọc "tính cách" của tách cà phê mình sắp uống.</blockquote>
 
+            <div class="share-row">
+        <span>Chia sẻ bài viết:</span>
+        <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.dinhroastery.com/blog/bai-04-phuong-phap-so-che.html" target="_blank" rel="noopener">Facebook</a>
+        <button class="share-btn" id="copyLink">Sao chép link</button>
+      </div>
+      <script>
+      (function(){var b=document.getElementById('copyLink');if(b)b.addEventListener('click',function(){
+        navigator.clipboard.writeText('https://www.dinhroastery.com/blog/bai-04-phuong-phap-so-che.html').then(function(){b.textContent='Đã sao chép!';setTimeout(function(){b.textContent='Sao chép link'},2000);});
+      });})();
+      </script>
+      <div class="related">
+        <h3>Bài viết liên quan</h3>
+        <ul>
+        <li><a href="bai-01-hanh-trinh-hat-ca-phe.html">Hành trình của hạt cà phê: từ quả cherry đến tách cà phê</a></li>
+        <li><a href="bai-05-cap-do-rang.html">Các cấp độ rang và ảnh hưởng đến hương vị</a></li>
+        <li><a href="bai-03-fine-robusta-la-gi.html">Fine Robusta là gì? Khi robusta cũng có thể "fine"</a></li>
+        </ul>
+      </div>
       <div class="post-nav">
         <a class="btn" href="bai-03-fine-robusta-la-gi.html">← Bài trước</a>
         <a class="btn" href="../blog.html">Về trang Blog</a>
@@ -87,6 +105,7 @@
   </div>
 </footer>
 
+<button class="to-top" id="toTop" aria-label="Về đầu trang">↑</button>
 <a class="float-zalo" href="https://zalo.me/0786567611" target="_blank" rel="noopener" aria-label="Nhắn Zalo">Zalo</a>
 
 <script>
@@ -95,6 +114,11 @@
   const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
   burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+</script>
+<script>
+(function(){var b=document.getElementById('toTop');if(!b)return;
+addEventListener('scroll',function(){b.classList.toggle('show',scrollY>600)},{passive:true});
+b.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});})();
 </script>
 </body>
 </html>
