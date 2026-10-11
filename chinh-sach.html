@@ -49,27 +49,24 @@
     <h3>1. Đặt hàng</h3>
     <p>Bạn đặt hàng trực tiếp qua Zalo <a href="https://zalo.me/0786567611" target="_blank" rel="noopener"><strong>0786 567 611</strong></a>: chọn loại cà phê, khối lượng (250g / 500g / 1kg) và cách xay (nguyên hạt hoặc xay theo cách pha của bạn). Đình tư vấn loại hợp gu trước khi bạn chốt đơn.</p>
 
-    <h3>2. Rang mới theo đơn</h3>
-    <p>Đình không rang sẵn để tồn kho. Mỗi đơn hàng được rang mới sau khi bạn xác nhận, rồi mới đóng gói và gửi đi — để bạn luôn nhận được cà phê tươi nhất.</p>
-
-    <h3>3. Giao hàng</h3>
+    <h3>2. Giao hàng</h3>
     <ul>
       <li><strong>Nội thành Đà Nẵng:</strong> giao trong ngày hoặc ngày hôm sau.</li>
       <li><strong>Các tỉnh thành khác:</strong> 2–4 ngày làm việc tùy khu vực.</li>
       <li><strong>Phí ship:</strong> tính theo đơn vị vận chuyển và khối lượng đơn hàng. Đình báo phí cụ thể trước khi gửi hàng — bạn đồng ý rồi Đình mới gửi.</li>
     </ul>
 
-    <h3>4. Thanh toán</h3>
+    <h3>3. Thanh toán</h3>
     <ul>
       <li><strong>Chuyển khoản:</strong> Đình gửi mã QR / số tài khoản qua Zalo sau khi bạn chốt đơn.</li>
       <li><strong>Thanh toán khi nhận hàng (COD):</strong> áp dụng cho đơn nội thành Đà Nẵng.</li>
     </ul>
 
-    <h3>5. Đổi trả</h3>
+    <h3>4. Đổi trả</h3>
     <p>Nếu sản phẩm bị lỗi do phía Đình (rang cháy, sai loại, sai khối lượng, hư hỏng do vận chuyển), bạn nhắn Zalo kèm hình ảnh trong vòng <strong>3 ngày</strong> kể từ khi nhận hàng. Đình sẽ gửi bù hoặc hoàn tiền — bạn chọn cách nào tiện cho bạn.</p>
     <p>Vì là thực phẩm, Đình không áp dụng đổi trả cho trường hợp "không hợp gu" — nhưng Đình luôn tư vấn kỹ trước khi bạn đặt để hạn chế tối đa điều này.</p>
 
-    <h3>6. Liên hệ</h3>
+    <h3>5. Liên hệ</h3>
     <p>Mọi thắc mắc về đơn hàng, bạn nhắn Zalo <a href="https://zalo.me/0786567611" target="_blank" rel="noopener"><strong>0786 567 611</strong></a> — Đình trả lời trực tiếp, không qua tổng đài.</p>
 
     <div style="text-align:center;margin-top:48px">
@@ -101,6 +98,7 @@
   </div>
 </footer>
 
+<button class="to-top" id="toTop" aria-label="Về đầu trang">↑</button>
 <a class="float-zalo" href="https://zalo.me/0786567611" target="_blank" rel="noopener" aria-label="Nhắn Zalo">Zalo</a>
 
 <script>
@@ -109,6 +107,11 @@
   const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
   burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+</script>
+<script>
+(function(){var b=document.getElementById('toTop');if(!b)return;
+addEventListener('scroll',function(){b.classList.toggle('show',scrollY>600)},{passive:true});
+b.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});})();
 </script>
 </body>
 </html>

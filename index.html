@@ -160,7 +160,7 @@
     </div>
     <div class="products">
       <article class="card rv">
-        <img src="images/product-cau-dat.jpg" alt="Fine Robusta Cầu Đất 500g">
+        <img loading="lazy" src="images/product-cau-dat.jpg" alt="Fine Robusta Cầu Đất 500g">
         <div class="card-body">
           <span class="tag">Bán chạy</span>
           <h3>Fine Robusta Cầu Đất</h3>
@@ -176,7 +176,7 @@
         </div>
       </article>
       <article class="card rv">
-        <img src="images/product-dak-lak.jpg" alt="Fine Robusta Đăk Lăk 500g">
+        <img loading="lazy" src="images/product-dak-lak.jpg" alt="Fine Robusta Đăk Lăk 500g">
         <div class="card-body">
           <span class="tag">Đậm đà</span>
           <h3>Fine Robusta Đăk Lăk</h3>
@@ -192,7 +192,7 @@
         </div>
       </article>
       <article class="card rv">
-        <img src="images/product-espresso.jpg" alt="Espresso Blend 500g">
+        <img loading="lazy" src="images/product-espresso.jpg" alt="Espresso Blend 500g">
         <div class="card-body">
           <span class="tag">Cân bằng</span>
           <h3>Espresso Blend</h3>
@@ -208,7 +208,7 @@
         </div>
       </article>
       <article class="card rv">
-        <img src="images/product-arabica.jpg" alt="Fine Arabica Cầu Đất 500g">
+        <img loading="lazy" src="images/product-arabica.jpg" alt="Fine Arabica Cầu Đất 500g">
         <div class="card-body">
           <span class="tag">Mới</span>
           <h3>Fine Arabica Cầu Đất</h3>
@@ -224,7 +224,7 @@
         </div>
       </article>
       <article class="card rv">
-        <img src="images/product-liberica.jpg" alt="Liberica Cà phê Mít 500g">
+        <img loading="lazy" src="images/product-liberica.jpg" alt="Liberica Cà phê Mít 500g">
         <div class="card-body">
           <span class="tag">Đặc sản</span>
           <h3>Liberica (Cà phê Mít)</h3>
@@ -331,6 +331,7 @@
   </div>
 </footer>
 
+<button class="to-top" id="toTop" aria-label="Về đầu trang">↑</button>
 <a class="float-zalo" href="https://zalo.me/0786567611" target="_blank" rel="noopener" aria-label="Nhắn Zalo">Zalo</a>
 
 <script>
@@ -369,6 +370,11 @@
     slider.addEventListener('mouseleave',restart);
     go(0);
   })();
+</script>
+<script>
+(function(){var b=document.getElementById('toTop');if(!b)return;
+addEventListener('scroll',function(){b.classList.toggle('show',scrollY>600)},{passive:true});
+b.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});})();
 </script>
 </body>
 </html>
