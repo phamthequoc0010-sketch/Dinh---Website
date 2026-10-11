@@ -55,6 +55,24 @@
 
       <blockquote>Người ta đầu tư tiền triệu cho hạt và máy, rồi dùng nước vòi một cách vô tư — đó là nghịch lý phổ biến nhất trong thế giới cà phê tại nhà.</blockquote>
 
+            <div class="share-row">
+        <span>Chia sẻ bài viết:</span>
+        <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.dinhroastery.com/blog/bai-09-nuoc-pha-ca-phe.html" target="_blank" rel="noopener">Facebook</a>
+        <button class="share-btn" id="copyLink">Sao chép link</button>
+      </div>
+      <script>
+      (function(){var b=document.getElementById('copyLink');if(b)b.addEventListener('click',function(){
+        navigator.clipboard.writeText('https://www.dinhroastery.com/blog/bai-09-nuoc-pha-ca-phe.html').then(function(){b.textContent='Đã sao chép!';setTimeout(function(){b.textContent='Sao chép link'},2000);});
+      });})();
+      </script>
+      <div class="related">
+        <h3>Bài viết liên quan</h3>
+        <ul>
+        <li><a href="bai-08-ty-le-pha-che.html">Tỷ lệ pha (brew ratio): công thức cho phin, espresso, pour over</a></li>
+        <li><a href="bai-16-nuoc-soi-100-do.html">Vì sao không nên pha cà phê bằng nước sôi 100 độ</a></li>
+        <li><a href="bai-11-cupping.html">Cupping: nếm cà phê như chuyên gia</a></li>
+        </ul>
+      </div>
       <div class="post-nav">
         <a class="btn" href="bai-08-ty-le-pha-che.html">← Bài trước</a>
         <a class="btn" href="../blog.html">Về trang Blog</a>
@@ -86,6 +104,7 @@
   </div>
 </footer>
 
+<button class="to-top" id="toTop" aria-label="Về đầu trang">↑</button>
 <a class="float-zalo" href="https://zalo.me/0786567611" target="_blank" rel="noopener" aria-label="Nhắn Zalo">Zalo</a>
 
 <script>
@@ -94,6 +113,11 @@
   const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
   burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+</script>
+<script>
+(function(){var b=document.getElementById('toTop');if(!b)return;
+addEventListener('scroll',function(){b.classList.toggle('show',scrollY>600)},{passive:true});
+b.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});})();
 </script>
 </body>
 </html>
