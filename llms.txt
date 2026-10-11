@@ -28,7 +28,7 @@
 ## Trang chính
 
 - [Trang chủ](https://www.dinhroastery.com/): giới thiệu xưởng rang, sản phẩm, cam kết, hỏi đáp, đặt hàng
-- [Blog kiến thức cà phê](https://www.dinhroastery.com/blog.html): 16 bài viết từ cơ bản đến nâng cao về giống, sơ chế, rang, xay, pha và bảo quản cà phê
+- [Blog kiến thức cà phê](https://www.dinhroastery.com/blog.html): 50 bài viết từ cơ bản đến nâng cao về giống, sơ chế, rang, xay, pha và bảo quản cà phê
 - [Nguồn gốc](https://www.dinhroastery.com/anh-3d.html): ảnh 3D parallax từ ảnh thật vùng nguyên liệu
 - [Chính sách giao hàng & đổi trả](https://www.dinhroastery.com/chinh-sach.html)
 
@@ -50,3 +50,37 @@
 - [Cà phê sạch: nhận biết cà phê tẩm ướp](https://www.dinhroastery.com/blog/bai-14-ca-phe-sach.html)
 - [Từ nông trại đến tách: giá trị của minh bạch nguồn gốc](https://www.dinhroastery.com/blog/bai-15-minh-bach-nguon-goc.html)
 - [Vì sao không nên pha cà phê bằng nước sôi 100 độ](https://www.dinhroastery.com/blog/bai-16-nuoc-soi-100-do.html)
+- [Cold brew: cà phê ủ lạnh đúng cách](https://www.dinhroastery.com/blog/bai-17-cold-brew.html)
+- [Phin Việt Nam: kỹ thuật pha chuẩn vị](https://www.dinhroastery.com/blog/bai-18-pha-phin.html)
+- [Cà phê sữa đá: tỷ lệ và bí quyết](https://www.dinhroastery.com/blog/bai-19-ca-phe-sua-da.html)
+- [Caffeine: uống bao nhiêu là đủ?](https://www.dinhroastery.com/blog/bai-20-caffeine.html)
+- [Bạc sỉu: thức uống gây thương nhớ của Sài Gòn](https://www.dinhroastery.com/blog/bai-21-bac-siu.html)
+- [Cà phê trứng: đặc sản Hà Nội](https://www.dinhroastery.com/blog/bai-22-ca-phe-trung.html)
+- [Cà phê muối: một nhúm muối thay đổi tất cả](https://www.dinhroastery.com/blog/bai-23-ca-phe-muoi.html)
+- [French press: pha cà phê kiểu Pháp](https://www.dinhroastery.com/blog/bai-24-french-press.html)
+- [Moka pot: ly espresso kiểu Ý tại nhà](https://www.dinhroastery.com/blog/bai-25-moka-pot.html)
+- [Pour over V60: kiểm soát từng giọt nước](https://www.dinhroastery.com/blog/bai-26-v60-pour-over.html)
+- [AeroPress: nhỏ mà có võ](https://www.dinhroastery.com/blog/bai-27-aeropress.html)
+- [Độ mịn xay cho từng cách pha: bảng tra cứu](https://www.dinhroastery.com/blog/bai-28-do-min-xay.html)
+- [Bloom: 45 giây đánh thức cà phê](https://www.dinhroastery.com/blog/bai-29-bloom.html)
+- [Single origin và blend: chọn thế nào?](https://www.dinhroastery.com/blog/bai-30-single-origin-blend.html)
+- [Đọc vị từ lớp crema](https://www.dinhroastery.com/blog/bai-31-crema.html)
+- [Maillard và caramen hóa: phép màu trong lò rang](https://www.dinhroastery.com/blog/bai-32-phan-ung-maillard.html)
+- [Lên men trong sơ chế: con dao hai lưỡi](https://www.dinhroastery.com/blog/bai-33-len-men-so-che.html)
+- [Hạt lỗi: kẻ phá hoại thầm lặng trong ly cà phê](https://www.dinhroastery.com/blog/bai-34-loi-hat.html)
+- [Độ cao và hương vị: càng cao càng ngon?](https://www.dinhroastery.com/blog/bai-35-do-cao-huong-vi.html)
+- [Typica, Bourbon, Catimor: họ hàng nhà cà phê](https://www.dinhroastery.com/blog/bai-36-giong-ca-phe.html)
+- [Mùa vụ cà phê Việt Nam: khi nào hạt ngon nhất?](https://www.dinhroastery.com/blog/bai-37-mua-vu-ca-phe.html)
+- [TDS và chiết xuất: khi dân kỹ thuật pha cà phê](https://www.dinhroastery.com/blog/bai-38-tds-chiet-xuat.html)
+- [Khuấy (agitation): chi tiết nhỏ, khác biệt lớn](https://www.dinhroastery.com/blog/bai-39-khuay-agitation.html)
+- [Nitro cold brew: ly cà phê có bọt như bia](https://www.dinhroastery.com/blog/bai-40-nitro-cold-brew.html)
+- [Decaf: cà phê đã khử caffeine](https://www.dinhroastery.com/blog/bai-41-decaf.html)
+- [Cà phê và sức khỏe: lợi ích và giới hạn](https://www.dinhroastery.com/blog/bai-42-ca-phe-suc-khoe.html)
+- [Cà phê và giấc ngủ: làm hòa với nhau](https://www.dinhroastery.com/blog/bai-43-ca-phe-giac-ngu.html)
+- [Chọn sữa cho cà phê: không phải sữa nào cũng như nhau](https://www.dinhroastery.com/blog/bai-44-sua-pha-ca-phe.html)
+- [Latte art: vẽ từ ly đầu tiên](https://www.dinhroastery.com/blog/bai-45-latte-art.html)
+- [Nước đá và ly cà phê: tưởng đơn giản mà không](https://www.dinhroastery.com/blog/bai-46-da-va-ca-phe.html)
+- [Vệ sinh dụng cụ pha: việc lười nhất mà quan trọng nhất](https://www.dinhroastery.com/blog/bai-47-ve-sinh-dung-cu.html)
+- [Nhận biết cà phê rang đã cũ](https://www.dinhroastery.com/blog/bai-48-ca-phe-rang-cu.html)
+- [Tự rang cà phê tại nhà: nên hay không?](https://www.dinhroastery.com/blog/bai-49-rang-tai-nha.html)
+- [Cà phê Việt: hơn một thế kỷ thăng trầm](https://www.dinhroastery.com/blog/bai-50-lich-su-ca-phe-viet.html)
