@@ -54,4 +54,10 @@
   <url><loc>https://www.dinhroastery.com/blog/bai-48-ca-phe-rang-cu.html</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.dinhroastery.com/blog/bai-49-rang-tai-nha.html</loc><lastmod>2026-10-11</lastmod></url>
   <url><loc>https://www.dinhroastery.com/blog/bai-50-lich-su-ca-phe-viet.html</loc><lastmod>2026-10-11</lastmod></url>
+  <url>
+    <loc>https://www.dinhroastery.com/tin-tuc.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

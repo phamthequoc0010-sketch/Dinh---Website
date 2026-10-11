@@ -29,6 +29,7 @@
 
 - [Trang chủ](https://www.dinhroastery.com/): giới thiệu xưởng rang, sản phẩm, cam kết, hỏi đáp, đặt hàng
 - [Blog kiến thức cà phê](https://www.dinhroastery.com/blog.html): 50 bài viết từ cơ bản đến nâng cao về giống, sơ chế, rang, xay, pha và bảo quản cà phê
+- [Tin tức & Nghiên cứu cà phê](https://www.dinhroastery.com/tin-tuc.html): tổng hợp nghiên cứu khoa học và tin tức ngành mới nhất, trích dẫn nguồn gốc rõ ràng, cập nhật định kỳ
 - [Nguồn gốc](https://www.dinhroastery.com/anh-3d.html): ảnh 3D parallax từ ảnh thật vùng nguyên liệu
 - [Chính sách giao hàng & đổi trả](https://www.dinhroastery.com/chinh-sach.html)
 
