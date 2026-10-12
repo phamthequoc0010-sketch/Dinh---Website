@@ -247,7 +247,7 @@
 @media(max-width:860px){.mini-news{grid-template-columns:1fr}}
 
 /* ---- Quiz chọn cà phê hợp gu ---- */
-/* redeploy trigger: Vercel missed webhook for f2fdbdf */
+/* redeploy trigger 2: Vercel GitHub 403 */
 .quiz-box{max-width:640px;margin:0 auto;background:#fff;border:1px solid #eee;border-radius:18px;padding:36px;box-shadow:0 6px 24px rgba(61,36,19,.07)}
 .quiz-progress{font-size:.85rem;color:#8a7460;margin-bottom:14px;letter-spacing:.04em}
 .quiz-q{font-size:1.3rem;font-weight:600;margin-bottom:20px;line-height:1.45}
