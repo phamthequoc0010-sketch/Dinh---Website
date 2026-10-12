@@ -222,10 +222,10 @@
     </div>
     <div class="products">
       <article class="card rv">
-        <img loading="lazy" src="images/product-cau-dat.jpg" alt="Fine Robusta Cầu Đất 500g">
+        <img loading="lazy" src="images/product-cau-dat.jpg" alt="Fine Robusta Đức Trọng 500g">
         <div class="card-body">
           <span class="tag">Bán chạy</span>
-          <h3>Fine Robusta Cầu Đất</h3>
+          <h3>Fine Robusta Đức Trọng</h3>
           <p>Hương cacao đậm, hậu ngọt dài, chua thanh nhẹ. Rang vừa — hợp nhất cho phin truyền thống.</p>
           <dl class="specs">
             <div><dt>Vùng trồng</dt><dd>Cầu Đất, Lâm Đồng</dd></div>
@@ -301,6 +301,25 @@
           <a class="btn zalo" href="https://zalo.me/0786567611" target="_blank" rel="noopener">Nhắn Zalo tư vấn</a>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section id="chon-ca-phe">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">3 câu hỏi · 30 giây</div>
+      <h2>Tìm cà phê hợp gu của bạn</h2>
+      <p>Trả lời 3 câu hỏi ngắn, Đình gợi ý loại cà phê hợp với bạn nhất.</p>
+    </div>
+    <div class="quiz-box rv" id="quizBox">
+      <div class="quiz-progress" id="quizProgress">Câu 1 / 3</div>
+      <div class="quiz-q" id="quizQ"></div>
+      <div class="quiz-opts" id="quizOpts"></div>
+      <div class="quiz-foot">
+        <button class="quiz-back" id="quizBack" type="button">← Câu trước</button>
+        <button class="quiz-restart" id="quizRestart" type="button" style="display:none">Làm lại</button>
+      </div>
     </div>
   </div>
 </section>
@@ -476,6 +495,72 @@ b.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});})()
       links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
     secs.forEach(function(x){io2.observe(x)});
   })();
+</script>
+<script>
+/* Quiz: tìm cà phê hợp gu */
+(function(){
+  var box=document.getElementById('quizBox');if(!box)return;
+  var qEl=document.getElementById('quizQ'),oEl=document.getElementById('quizOpts'),
+      pEl=document.getElementById('quizProgress'),back=document.getElementById('quizBack'),
+      restart=document.getElementById('quizRestart');
+  var PRODUCTS={
+    caudat:{name:'Fine Robusta Đức Trọng',desc:'Hương cacao đậm, hậu ngọt dài, chua thanh nhẹ. Rang vừa — hợp nhất cho phin truyền thống.'},
+    daklak:{name:'Fine Robusta Đăk Lăk',desc:'Body dày, đắng êm, crema đẹp. Lựa chọn của những ai pha máy espresso mỗi sáng.'},
+    espresso:{name:'Espresso Blend',desc:'Phối trộn theo công thức riêng của Đình: ngọt, thơm, ít đắng gắt — dễ uống mỗi ngày.'},
+    arabica:{name:'Fine Arabica Cầu Đất',desc:'Chua thanh tao nhã, hương hoa quả và mật ong. Rang nhẹ — hợp pour over và phin.'},
+    liberica:{name:'Liberica (Cà phê Mít)',desc:'Hương mít chín đặc trưng khó lẫn, body nhẹ, hậu ngọt. Dòng cà phê bản địa hiếm của Việt Nam.'}
+  };
+  var ORDER=['caudat','daklak','espresso','arabica','liberica'];
+  var QUESTIONS=[
+    {q:'Bạn thích vị cà phê nào nhất?',opts:[
+      {t:'Đậm đà, mạnh mẽ, hậu cacao',s:{caudat:2,daklak:1}},
+      {t:'Dày, đắng êm — kiểu pha máy',s:{daklak:2,espresso:1}},
+      {t:'Cân bằng, ngọt, dễ uống mỗi ngày',s:{espresso:2,arabica:1}},
+      {t:'Nhẹ nhàng, chua thanh, thơm hoa quả',s:{arabica:2,liberica:1}}]},
+    {q:'Bạn thường pha cà phê bằng gì?',opts:[
+      {t:'Phin truyền thống',s:{caudat:2,arabica:1}},
+      {t:'Máy espresso / Moka pot',s:{daklak:2,espresso:1}},
+      {t:'Pour over (V60) / Cold brew',s:{arabica:2,liberica:1}},
+      {t:'Chưa có dụng cụ, uống linh tinh',s:{espresso:2,caudat:1}}]},
+    {q:'Bạn hay uống cà phê kiểu nào?',opts:[
+      {t:'Cà phê sữa đá',s:{caudat:2,espresso:1}},
+      {t:'Đen đá / đen nóng',s:{daklak:2,caudat:1}},
+      {t:'Latte / bạc sỉu',s:{espresso:2,arabica:1}},
+      {t:'Muốn thử vị lạ, đặc biệt',s:{liberica:3}}]}
+  ];
+  var step=0,answers=[];
+  function render(){
+    if(step<QUESTIONS.length){
+      pEl.textContent='Câu '+(step+1)+' / '+QUESTIONS.length;
+      pEl.style.display='';qEl.style.display='';oEl.style.display='';
+      qEl.textContent=QUESTIONS[step].q;oEl.innerHTML='';
+      QUESTIONS[step].opts.forEach(function(o,i){
+        var b=document.createElement('button');b.type='button';b.className='quiz-opt';b.textContent=o.t;
+        b.onclick=function(){answers[step]=i;step++;render();};
+        oEl.appendChild(b);
+      });
+      back.disabled=(step===0);restart.style.display='none';
+    }else{
+      var scores={};ORDER.forEach(function(k){scores[k]=0;});
+      answers.forEach(function(ai,qi){
+        var s=QUESTIONS[qi].opts[ai].s;
+        Object.keys(s).forEach(function(k){scores[k]+=s[k];});
+      });
+      var best=ORDER[0];ORDER.forEach(function(k){if(scores[k]>scores[best])best=k;});
+      var p=PRODUCTS[best];
+      pEl.style.display='none';qEl.style.display='none';oEl.style.display='none';
+      var r=document.createElement('div');r.className='quiz-result';
+      r.innerHTML='<span class="cat-tag">Gợi ý dành cho bạn</span><h3>'+p.name+'</h3><p>'+p.desc+'</p>'+
+        '<a class="btn zalo" href="https://zalo.me/0786567611" target="_blank" rel="noopener">Nhắn Zalo tư vấn</a> '+
+        '<a class="btn ghost" href="#san-pham">Xem tất cả sản phẩm</a>';
+      qEl.parentNode.insertBefore(r,qEl);r.dataset.qr='1';
+      back.disabled=true;restart.style.display='';
+    }
+  }
+  back.onclick=function(){if(step>0){var old=box.querySelector('[data-qr]');if(old)old.remove();step--;render();}};
+  restart.onclick=function(){var old=box.querySelector('[data-qr]');if(old)old.remove();step=0;answers=[];render();};
+  render();
+})();
 </script>
 </body>
 </html>
