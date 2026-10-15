@@ -46,6 +46,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="images/hero-roastery.jpg">
 <link rel="stylesheet" href="styles.css">
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}
+</script>
 <noscript><style>.rv{opacity:1;transform:none}</style></noscript>
   <script type="application/ld+json">
 {
@@ -128,6 +131,7 @@
 
 <div class="hero" id="top">
   <div class="hero-bg"></div>
+  <canvas id="hero3d" aria-hidden="true"></canvas>
   <div class="hero-inner">
     <span class="kicker">Xưởng rang · Fine Robusta Việt Nam</span>
     <h1>Cà phê rang nguyên chất,<br>từ hạt tuyển đến tách thơm.</h1>
@@ -562,6 +566,7 @@ b.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});})()
   render();
 })();
 </script>
+<script type="module" src="hero3d.js"></script>
 </body>
 <!-- redeploy trigger: Vercel missed the webhook for 0fb83f4 -->
 </html>
