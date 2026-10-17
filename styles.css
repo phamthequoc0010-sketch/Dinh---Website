@@ -101,6 +101,11 @@
   .foot-grid h4{font-family:'Be Vietnam Pro',sans-serif;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-2);margin-bottom:18px}
   .foot-grid p,.foot-grid a{font-size:.92rem;color:#cdbb9c;text-decoration:none}
   .foot-grid a:hover{color:#fff}
+  .soc{display:flex;align-items:center;gap:10px;margin:7px 0}
+  .soc .ic{width:32px;height:32px;border-radius:50%;background:#b7410e;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,transform .2s}
+  .soc .ic svg{width:16px;height:16px;fill:#fff}
+  .soc:hover .ic{background:#8f340b;transform:scale(1.08)}
+  .foot-policy{margin-top:10px}
   .foot-brand{display:flex;align-items:center;gap:14px;margin-bottom:16px}
   .foot-brand img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
   .foot-brand b{font-family:'Playfair Display',serif;font-size:1.5rem;letter-spacing:.14em;color:#fff}
