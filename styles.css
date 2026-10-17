@@ -127,6 +127,9 @@
     .products{grid-template-columns:1fr;max-width:440px;margin:0 auto}
     .values{grid-template-columns:repeat(2,1fr)}
     .foot-grid{grid-template-columns:1fr;gap:30px}
+    .stats{flex-wrap:nowrap;gap:18px}
+    .stats div b{font-size:1.45rem}
+    .stats div span{font-size:.78rem}
     section{padding:72px 0}
     .kicker{letter-spacing:.2em;font-size:.66rem}
   }
