@@ -58,9 +58,12 @@
   .about-txt h2{font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:20px}
   .about-txt p{margin-bottom:16px;color:#54432e}
   .about-txt strong{color:var(--brown)}
-  .stats{display:flex;gap:36px;margin-top:28px;flex-wrap:wrap}
-  .stats div b{display:block;font-family:'Playfair Display',serif;font-size:2rem;color:var(--brown-2)}
-  .stats div span{font-size:.85rem;color:var(--muted)}
+  .stats{display:flex;gap:14px;margin-top:28px}
+  .stat{flex:1;background:var(--white);border:1px solid rgba(61,36,19,.1);border-radius:18px;padding:20px 8px;text-align:center;box-shadow:0 8px 24px rgba(61,36,19,.06)}
+  .stat .sic{width:42px;height:42px;border-radius:50%;background:rgba(92,58,28,.1);display:inline-flex;align-items:center;justify-content:center;margin-bottom:10px}
+  .stat .sic svg{width:22px;height:22px;fill:none;stroke:#5c3a1c;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .stat b{display:block;font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--brown-2);line-height:1.2}
+  .stat .lbl{display:block;font-size:.8rem;color:var(--muted);margin-top:4px}
 
   /* Products */
   #san-pham{background:var(--cream-2)}
@@ -127,9 +130,11 @@
     .products{grid-template-columns:1fr;max-width:440px;margin:0 auto}
     .values{grid-template-columns:repeat(2,1fr)}
     .foot-grid{grid-template-columns:1fr;gap:30px}
-    .stats{flex-wrap:nowrap;gap:18px}
-    .stats div b{font-size:1.45rem}
-    .stats div span{font-size:.78rem}
+    .stats{gap:10px}
+    .stat{padding:16px 6px;border-radius:14px}
+    .stat .sic{width:36px;height:36px;margin-bottom:8px}
+    .stat b{font-size:1.35rem}
+    .stat .lbl{font-size:.72rem}
     section{padding:72px 0}
     .kicker{letter-spacing:.2em;font-size:.66rem}
   }
