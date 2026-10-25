@@ -61,6 +61,128 @@ import * as THREE from 'three';
   var narrow = aspect0 < 0.8;
   var Y_OFF = 0.38;
   var fitK = Math.min(1, 1.13 * aspect0);
+
+  // Mobile (màn hình hẹp): hạt cà phê 3D bay lên nhẹ thay cho màn hạt li ti.
+  // Desktop không bị ảnh hưởng — nhánh này return sớm, code xếp chữ ĐÌNH bên dưới giữ nguyên.
+  if (narrow) { runBeanRise(); return; }
+
+  function runBeanRise() {
+    var renderer;
+    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); }
+    catch (e) { return; }   // giữ ảnh nền tĩnh
+    renderer.setClearColor(0x000000, 0);
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(45, 1, 0.1, 50);
+    camera.position.set(0, 0, 4.4);
+    scene.add(new THREE.HemisphereLight(0xfff6e8, 0x8a6a4a, 0.9));
+    var dir = new THREE.DirectionalLight(0xffffff, 1.3);
+    dir.position.set(3, 5, 4);
+    scene.add(dir);
+
+    // Hạt cà phê 3D: ellipsoid + rãnh chữ S (cùng mẫu watermark 3D đã duyệt)
+    function makeBeanGeometry() {
+      var g = new THREE.SphereGeometry(1, 48, 32);
+      var pos = g.attributes.position;
+      var v = new THREE.Vector3();
+      for (var i = 0; i < pos.count; i++) {
+        v.fromBufferAttribute(pos, i);
+        var x = v.x * 0.85, y = v.y * 1.25, z = v.z * 0.72;
+        if (z > 0) {
+          var xc = 0.16 * Math.sin(y * 2.2);
+          var d = Math.abs(x - xc), w = 0.16;
+          if (d < w) {
+            var t = 1 - d / w;
+            var depth = 0.45 * t * t * (3 - 2 * t);
+            var fade = Math.max(0, 1 - Math.pow(Math.abs(y) / 1.15, 2));
+            z -= depth * fade;
+          }
+        }
+        x += 0.04 * Math.sin(y * 3.0) * z;
+        pos.setXYZ(i, x, y, z);
+      }
+      g.computeVertexNormals();
+      return g;
+    }
+    var beanGeo = makeBeanGeometry();
+    var PALETTE = [0xb7410e, 0xb7410e, 0xd99a68, 0xf3e5d0, 0x3d2413];
+    var beans = [];
+    var COUNT = 14;
+
+    function worldHalf() {
+      var halfH = Math.tan(camera.fov * Math.PI / 360) * camera.position.z;
+      return { halfW: halfH * camera.aspect, halfH: halfH };
+    }
+    function spawn(b, randomY) {
+      var wh = worldHalf();
+      b.userData.baseX = (Math.random() * 2 - 1) * wh.halfW * 0.92;
+      b.position.x = b.userData.baseX;
+      b.position.y = randomY ? (Math.random() * 2 - 1) * wh.halfH : -wh.halfH - 0.4;
+      b.position.z = (Math.random() * 2 - 1) * 0.8;
+      b.userData.speed = 0.14 + Math.random() * 0.12;
+      b.userData.sway = 0.10 + Math.random() * 0.15;
+      b.userData.swaySpeed = 0.3 + Math.random() * 0.5;
+      b.userData.phase = Math.random() * Math.PI * 2;
+      b.userData.rotX = (Math.random() - 0.5) * 0.6;
+      b.userData.rotY = (Math.random() - 0.5) * 0.8;
+      b.scale.setScalar(0.08 + Math.random() * 0.07);
+    }
+    function resize() {
+      var w = canvas.clientWidth || window.innerWidth;
+      var h = canvas.clientHeight || window.innerHeight;
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    for (var i = 0; i < COUNT; i++) {
+      var m = new THREE.Mesh(beanGeo, new THREE.MeshStandardMaterial({
+        color: PALETTE[(Math.random() * PALETTE.length) | 0],
+        roughness: 0.55, metalness: 0.05, transparent: true, opacity: 0
+      }));
+      m.userData = {};
+      spawn(m, true);
+      scene.add(m);
+      beans.push(m);
+    }
+
+    var clock = new THREE.Clock();
+    var running = true, firstFrame = true;
+    function tick() {
+      if (!running) return;
+      requestAnimationFrame(tick);
+      var dt = Math.min(clock.getDelta(), 0.05);
+      var t = clock.elapsedTime;
+      var wh = worldHalf();
+      for (var j = 0; j < beans.length; j++) {
+        var b = beans[j], u = b.userData;
+        b.position.y += u.speed * dt;
+        b.position.x = u.baseX + Math.sin(t * u.swaySpeed + u.phase) * u.sway;
+        b.rotation.x += u.rotX * dt;
+        b.rotation.y += u.rotY * dt;
+        // mờ dần ở 2 mép dưới/trên để hạt hiện rồi tan nhẹ, không cắt đột ngột
+        var vt = (b.position.y + wh.halfH) / (2 * wh.halfH);
+        b.material.opacity = Math.max(0, Math.min(1, Math.min(vt, 1 - vt) / 0.12)) * 0.9;
+        if (b.position.y > wh.halfH + 0.4) spawn(b, false);
+      }
+      renderer.render(scene, camera);
+      if (firstFrame) { firstFrame = false; canvas.classList.add('on'); }
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        var vis = es[0].isIntersecting && !document.hidden;
+        if (vis && !running) { running = true; clock.getDelta(); tick(); }
+        else running = vis;
+      }).observe(canvas);
+    }
+    document.addEventListener('visibilitychange', function () {
+      var vis = !document.hidden;
+      if (vis && !running) { running = true; clock.getDelta(); tick(); }
+      else running = vis;
+    });
+    tick();
+  }
   var A = fitToBox(rawA, 2.9, 1.9).map(function (p) { return [p[0] * fitK, p[1] * fitK + Y_OFF]; });
   var B = fitToBox(rawB, 2.9, 1.9).map(function (p) { return [p[0] * fitK, p[1] * fitK + Y_OFF]; });
   var N = Math.min(A.length, B.length, 2600);
