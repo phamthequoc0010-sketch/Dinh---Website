@@ -13,6 +13,11 @@
   a{color:inherit}
   .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
 
+  /* Tuyen ngon mo dau kieu EveryHalf: chu sans lon, can giua, nhip cham */
+  .manifesto{background:var(--white);text-align:center}
+  .manifesto .wrap{max-width:840px}
+  .manifesto p{font-size:clamp(1.4rem,3vw,2rem);line-height:1.6;font-weight:500;color:var(--brown)}
+
   /* Header */
   header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(246,240,228,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(61,36,19,.12);transition:box-shadow .3s}
   header.scrolled{box-shadow:0 4px 24px rgba(61,36,19,.12)}
@@ -45,10 +50,32 @@
   .hero h1{font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:20px;text-shadow:0 2px 30px rgba(0,0,0,.4)}
   .hero p.lead{font-size:clamp(1.05rem,2vw,1.3rem);max-width:620px;margin-bottom:34px;color:#f3ead9;font-weight:300}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-  @media(min-width:901px){
-    .hero{align-items:flex-end;padding-bottom:120px}
-    .hero h1{font-size:clamp(2.4rem,4.5vw,3.4rem)}
-  }
+
+  /* Hero kieu EveryHalf: anh tran vien, tieu de lech trai, khoi origin mono ben phai, khong CTA */
+  .hero-eh{align-items:flex-start;padding:0}
+  .hero-eh::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(20,10,2,.45),transparent 22%),
+               linear-gradient(90deg,rgba(20,10,2,.42),transparent 62%)}
+  .hero-bg-eh{background:url('images/farm/farm-02.jpg') center 30%/cover no-repeat;filter:brightness(.92) saturate(1.02)}
+  .hero-inner-eh{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;
+    max-width:1280px;padding:27vh 32px 0}
+  .hero-main h1{font-family:'Be Vietnam Pro',sans-serif;font-weight:600;
+    font-size:clamp(2.1rem,4.4vw,3.2rem);line-height:1.28;letter-spacing:-.01em;
+    color:#fff;max-width:520px;margin:0;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+  .hero-origin{display:flex;flex-direction:column;gap:2px;text-align:right;flex-shrink:0;padding-top:10px}
+  .hero-origin span{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;
+    text-shadow:0 1px 14px rgba(0,0,0,.4)}
+
+  /* Header trong suot de len anh hero, cuon xuong moi hien nen kem (chi trang chu) */
+  .head-over-hero{background:transparent;border-bottom-color:transparent;backdrop-filter:none;transition:background .3s,box-shadow .3s}
+  .head-over-hero .brand b,.head-over-hero .brand small,.head-over-hero .links a:not(.btn){color:#fff}
+  .head-over-hero .burger span{background:#fff}
+  .head-over-hero.scrolled{background:rgba(246,240,228,.92);border-bottom-color:rgba(61,36,19,.12);backdrop-filter:blur(10px)}
+  .head-over-hero.scrolled .brand b{color:var(--brown)}
+  .head-over-hero.scrolled .brand small{color:var(--muted)}
+  .head-over-hero.scrolled .links a:not(.btn){color:var(--brown)}
+  .head-over-hero.scrolled .burger span{background:var(--brown)}
 
   /* Sections */
   section{padding:96px 0}
@@ -141,6 +168,10 @@
     .stat .sic{width:36px;height:36px;margin-bottom:8px}
     .stat b{font-size:1.35rem}
     .stat .lbl{font-size:.72rem}
+    .hero-inner-eh{flex-direction:column;gap:22px;padding:24vh 22px 0}
+    .hero-origin{text-align:left;padding-top:0}
+    .hero-origin span{font-size:.72rem}
+    .head-over-hero .links.open a:not(.btn){color:var(--brown)}
     section{padding:48px 0}
     .kicker{letter-spacing:.2em;font-size:.66rem}
   }
