@@ -56,7 +56,7 @@
   .hero-eh::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
     background:linear-gradient(180deg,rgba(20,10,2,.45),transparent 22%),
                linear-gradient(90deg,rgba(20,10,2,.42),transparent 62%)}
-  .hero-bg-eh{background:url('images/farm/farm-02.jpg') center 30%/cover no-repeat;filter:brightness(.92) saturate(1.02)}
+  .hero-bg-eh{background:url('images/hero-vuon-hai.jpg') center 30%/cover no-repeat;filter:brightness(.92) saturate(1.02)}
   .hero-inner-eh{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;
     max-width:1280px;padding:27vh 32px 0}
   .hero-main h1{font-family:'Be Vietnam Pro',sans-serif;font-weight:600;
