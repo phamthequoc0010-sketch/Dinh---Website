@@ -400,6 +400,13 @@
 .panel-specs a{color:var(--gold);font-weight:600;text-decoration:none}
 .panel-specs a:hover{text-decoration:underline}
 .panel-src{font-size:.85rem;color:#8a7460}
+.panel-story{margin:0 0 18px;padding:16px 18px;border-left:3px solid #b7410e;background:#f8f0e3;border-radius:0 10px 10px 0}
+.panel-story p{margin:10px 0 0;line-height:1.75;font-size:.95rem;color:var(--brown)}
+.panel-facts{margin:0 0 18px}
+.panel-facts ul{margin:10px 0 0;padding-left:20px}
+.panel-facts li{font-size:.9rem;line-height:1.7;color:#54432e;margin-bottom:8px}
+.panel-facts li:last-child{margin-bottom:0}
+
 .map-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
 .chip{border:1.5px solid rgba(61,36,19,.25);background:var(--white);color:var(--brown);font-family:inherit;font-weight:600;font-size:.92rem;padding:11px 20px;border-radius:999px;cursor:pointer;transition:all .2s}
 .chip:hover{border-color:var(--gold);color:var(--gold)}
