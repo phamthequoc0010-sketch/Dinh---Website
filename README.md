@@ -14,7 +14,7 @@ Website tĩnh (một file `index.html`), deploy miễn phí trên Vercel từ re
 3. **Ảnh hero** `images/hero-roastery.jpg` — có thể thay bằng ảnh xưởng rang thật.
 
 ## Thông tin liên hệ đang dùng
-- Đặt hàng: Zalo **0786567611** → `https://zalo.me/0786567611`
+- Đặt hàng: Zalo **0392658611** → `https://zalo.me/0392658611`
 - Facebook: https://www.facebook.com/dinhroastery
 - Instagram: https://www.instagram.com/dinhvietnamesefinecoffee
 
