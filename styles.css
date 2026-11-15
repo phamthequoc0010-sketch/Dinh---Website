@@ -22,12 +22,13 @@
   header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(246,240,228,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(61,36,19,.12);transition:box-shadow .3s}
   header.scrolled{box-shadow:0 4px 24px rgba(61,36,19,.12)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  header .wrap{max-width:1280px}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
   .brand img{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
   .brand b{font-family:'Playfair Display',serif;font-size:1.35rem;letter-spacing:.14em}
   .brand small{display:block;font-family:'Be Vietnam Pro',sans-serif;font-size:.62rem;letter-spacing:.22em;color:var(--muted);font-weight:500}
-  .links{display:flex;gap:30px;align-items:center}
-  .links a{text-decoration:none;font-weight:500;font-size:.95rem;position:relative}
+  .links{display:flex;gap:22px;align-items:center}
+  .links a{text-decoration:none;font-weight:500;font-size:.95rem;position:relative;white-space:nowrap}
   .links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--gold);transition:width .25s}
   .links a:not(.btn):hover::after{width:100%}
   .links .btn{padding:9px 20px;font-size:.85rem;white-space:nowrap;flex-shrink:0}
@@ -174,6 +175,14 @@
     .head-over-hero .links.open a:not(.btn){color:var(--brown)}
     section{padding:48px 0}
     .kicker{letter-spacing:.2em;font-size:.66rem}
+  }
+
+  /* Menu desktop chi hien khi du cho: duoi 1200px dung burger de link khong bao gio xuong 2 hang */
+  @media(max-width:1200px){
+    .links{position:fixed;top:72px;right:0;left:0;background:var(--cream);flex-direction:column;padding:26px;gap:20px;border-bottom:1px solid rgba(61,36,19,.12);transform:translateY(-130%);transition:transform .35s;box-shadow:0 20px 40px rgba(61,36,19,.12)}
+    .links.open{transform:none}
+    .burger{display:block}
+    .head-over-hero .links.open a:not(.btn){color:var(--brown)}
   }
 
 /* Blog */
