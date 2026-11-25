@@ -259,22 +259,6 @@
         </div>
       </article>
       <article class="card rv">
-        <img loading="lazy" src="images/product-dak-lak.jpg" alt="Fine Robusta Đăk Lăk 500g">
-        <div class="card-body">
-          <span class="tag">Đậm đà</span>
-          <h3>Fine Robusta Đăk Lăk</h3>
-          <p>Body dày, đắng êm, crema đẹp. Lựa chọn của những ai pha máy espresso mỗi sáng.</p>
-          <dl class="specs">
-            <div><dt>Vùng trồng</dt><dd>Đăk Lăk, Tây Nguyên</dd></div>
-            <div><dt>Sơ chế</dt><dd>Honey</dd></div>
-            <div><dt>Mức rang</dt><dd>Vừa đậm (Medium-Dark)</dd></div>
-            <div><dt>Gợi ý pha</dt><dd>Espresso, phin</dd></div>
-          </dl>
-          <div class="price-row"><span class="price coming-soon">Sắp mở bán</span></div>
-          <a class="btn zalo" href="https://zalo.me/0392658611" target="_blank" rel="noopener">Nhắn Zalo tư vấn</a>
-        </div>
-      </article>
-      <article class="card rv">
         <img loading="lazy" src="images/product-espresso.jpg" alt="Espresso Blend 500g">
         <div class="card-body">
           <span class="tag">Cân bằng</span>
@@ -547,26 +531,25 @@ b.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});})()
       restart=document.getElementById('quizRestart');
   var PRODUCTS={
     caudat:{name:'Fine Robusta Đức Trọng',desc:'Hương cacao đậm, hậu ngọt dài, chua thanh nhẹ. Rang vừa — hợp nhất cho phin truyền thống.'},
-    daklak:{name:'Fine Robusta Đăk Lăk',desc:'Body dày, đắng êm, crema đẹp. Lựa chọn của những ai pha máy espresso mỗi sáng.'},
     espresso:{name:'Espresso Blend',desc:'Phối trộn theo công thức riêng của Đình: ngọt, thơm, ít đắng gắt — dễ uống mỗi ngày.'},
     arabica:{name:'Fine Arabica Cầu Đất',desc:'Chua thanh tao nhã, hương hoa quả và mật ong. Rang nhẹ — hợp pour over và phin.'},
     liberica:{name:'Liberica (Cà phê Mít)',desc:'Hương mít chín đặc trưng khó lẫn, body nhẹ, hậu ngọt. Dòng cà phê bản địa hiếm của Việt Nam.'}
   };
-  var ORDER=['caudat','daklak','espresso','arabica','liberica'];
+  var ORDER=['caudat','espresso','arabica','liberica'];
   var QUESTIONS=[
     {q:'Bạn thích vị cà phê nào nhất?',opts:[
-      {t:'Đậm đà, mạnh mẽ, hậu cacao',s:{caudat:2,daklak:1}},
-      {t:'Dày, đắng êm — kiểu pha máy',s:{daklak:2,espresso:1}},
+      {t:'Đậm đà, mạnh mẽ, hậu cacao',s:{caudat:2}},
+      {t:'Dày, đắng êm — kiểu pha máy',s:{espresso:2}},
       {t:'Cân bằng, ngọt, dễ uống mỗi ngày',s:{espresso:2,arabica:1}},
       {t:'Nhẹ nhàng, chua thanh, thơm hoa quả',s:{arabica:2,liberica:1}}]},
     {q:'Bạn thường pha cà phê bằng gì?',opts:[
       {t:'Phin truyền thống',s:{caudat:2,arabica:1}},
-      {t:'Máy espresso / Moka pot',s:{daklak:2,espresso:1}},
+      {t:'Máy espresso / Moka pot',s:{espresso:2}},
       {t:'Pour over (V60) / Cold brew',s:{arabica:2,liberica:1}},
       {t:'Chưa có dụng cụ, uống linh tinh',s:{espresso:2,caudat:1}}]},
     {q:'Bạn hay uống cà phê kiểu nào?',opts:[
       {t:'Cà phê sữa đá',s:{caudat:2,espresso:1}},
-      {t:'Đen đá / đen nóng',s:{daklak:2,caudat:1}},
+      {t:'Đen đá / đen nóng',s:{caudat:2}},
       {t:'Latte / bạc sỉu',s:{espresso:2,arabica:1}},
       {t:'Muốn thử vị lạ, đặc biệt',s:{liberica:3}}]}
   ];
